@@ -104,7 +104,7 @@ Page({
     onTap_Map2_calloutTap(e){
         let _poi = null;
         this.data.markers.forEach(i=>{
-            if(i.id == e.markerId){
+            if(i.id === e.markerId){
               _poi = i
             }
         });

@@ -1,7 +1,58 @@
 <!--music.wxml-->
 
-<view class="animate-container">
-  <view>
-    自定义动画,testsomething
+<view class="music-container">
+      
+  <view class="player">
+    
+    <view class="poster">
+        <view class="img-wrapper">
+            <image class="img" src="{{currMusic.poster}}"  style="transform: rotate({{currMusic.ang}}deg);"></image>
+            <image src="./cover.png" class="cover"></image>
+            
+            <image></image>
+        </view>
+    </view>
+    <view class="music-info">
+        <view class="music-name">{{currMusic.name}}</view>
+        <view class="music-author">{{currMusic.author}}</view>
+        <view class="music-timer">
+            <view class="index">{{currMusic.playCurr}}</view>
+            
+            	<!-- <view wx:for="{{waves}}"  wx:for-item='item' wx:for-index="index" style="height: {{waves[index]}};"  wx:key="{{index}}" class="wave"></view> -->
+            	<!-- <canvas canvas-id="wave" style="width: 460rpx;height: 62rpx;"></canvas> -->
+            <view class="music-wave">
+                <slider value="{{slider_value}}" bindchange="onSlider_change" min="0" max="100" bindchanging="onSlider_changing" style="width: 100%;height: 62rpx;"/>
+            </view>
+            <view class="totle">{{currMusic.playTotle}}</view>
+        </view>
+        <view class="music-contorler">
+            
+            <image src="" class="menu"></image>
+            
+            
+            <image src="./backward.png" class="pre" ontap="onTap_pre"></image>
+            <image  wx:if="{{!isPlaying}}" src="./play.png" class="play centry-btn" ontap="onTap_play">
+                
+            </image>
+            <image  wx:if="{{isPlaying}}" src="./pause.png" class="play centry-btn" ontap="onTap_pause">
+            </image>
+                
+            <image src="./forward.png" class="next" ontap="onTap_next"></image>
+            <image src="./icon_menu-circle_alt2.png" class="menu" ontap="onTap_showMenu"></image>
+        </view>
+    </view>
+    
+  </view>
+  
+  <view class="music-list-cover" hover-stop-propagation  wx:if="{{showMenu}}">
+      <view class="tap-cover" ontap="ontap_closeMenu"></view>
+      <view class="music-list" wx:if="{{showMenu}}">
+          <view class="title">歌曲列表</view>
+          <view class="ul">
+              <view class="li {{index===indexInMusicList?'index':''}}" wx:for="{{MusicList}}" wx:for-item="item" wx:for-index="index" wx:key="{{item.id}}" ontap="onTap_chooseList" data-id="{{index}}"> 
+                  {{index}}:{{item.name}}-{{item.author}} 
+              </view>
+          </view>
+      </view>
   </view>
 </view>

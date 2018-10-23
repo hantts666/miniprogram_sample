@@ -4,3 +4,165 @@
 .animate-container{
 	
 }
+.poster{
+    width: 460rpx;
+    margin: auto;
+    padding-top: 60rpx;
+    .img-wrapper{
+        width: 460rpx;
+        position: relative;
+        overflow: hidden;
+        
+        height: 460rpx;
+        .img{
+            width: 100%;
+            height: 100%;
+            background: #808080;
+            display: block;
+            transition: all 1100ms linear;
+        }
+        .cover{
+            width: 102%;
+            height: 102%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+.music-info{
+    padding-top: 80rpx;
+    .music-name{
+        text-align: center;
+        font-size: 38rpx;
+        color: #323232;
+        font-weight: bold;
+    }
+    .music-author{
+        text-align: center;
+        font-size: 32rpx;
+        color: #90a1c9;
+        padding-top: 20rpx;
+    }
+}
+.music-timer{
+    display: flex;
+    padding-top: 45rpx;
+    justify-content:space-around;
+    .index{
+        width: 60rpx;
+        font-size: 30rpx;
+        line-height: 92rpx;
+        color: #bac1d4;
+        text-align: right;
+    }
+    .music-wave{
+        width: 60%;
+        height: 92rpx;
+        width: 500rpx;
+        display: flex;
+        position: relative;
+        justify-content:space-around;
+        .wave{
+            position: relative;
+            background: #b3c4e8;
+            width: 6rpx;
+            height: 10%;
+            top: 50%;
+            transition: height 0.5s linear;
+            transform: translateY(-50%);
+        }
+    }
+    .totle{
+        width: 90rpx;
+        font-size: 30rpx;
+        line-height: 92rpx;
+        
+        color: #bac1d4;
+        text-align: left;
+    }
+}
+.music-contorler{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding-top: 50rpx;
+    .pre{
+        width: 50rpx;
+        height: 35rpx;
+        opacity: 0.4;
+        
+    }
+    .play{   
+    }
+    .centry-btn{
+        margin-left: 60rpx;
+        width: 60rpx;
+        height: 80rpx;
+        opacity: 0.6;
+    }
+    .next{
+        margin-left: 60rpx;
+        width: 50rpx;
+        opacity: 0.4;
+        height: 35rpx;
+    }
+    .menu{
+        margin-left: 60rpx;
+        width: 50rpx;
+        opacity: 0.4;
+        height: 50rpx;
+    }
+}
+.tap-cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+.music-list-cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.music-list{
+    width: 100%;
+    height: 400rpx;
+    background: #fff;
+    border-top: 1px #e0e0e0 solid;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    .title{
+        font-size: 32rpx;
+        line-height: 60rpx;
+        color: #323232;
+        padding-left: 30rpx;
+    }
+    .close{
+        position: absolute;
+        right: 40rpx;
+        top: 10rpx;
+        width: 45rpx;
+        height: 45rpx;
+    }
+    .ul{
+        width: 100%;
+        .li{
+            line-height: 45rpx;
+            font-size: 25rpx;
+            border-top: 1rpx solid #E0E0E0;
+            padding-left: 20rpx;
+            line-height: 55rpx;
+        }
+        .index{
+            color: red;
+        }
+    }
+    
+}
