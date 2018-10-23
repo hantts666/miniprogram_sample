@@ -154,7 +154,7 @@ Page({
         })
         this.musicContext.play();
     },
-    onTap_pre(){
+    onTap_pre(){ 
         let index = this.data.indexInMusicList;
         let length = this.data.MusicList.length;
         let _index = (index-1)<0?length-1:index-1;
