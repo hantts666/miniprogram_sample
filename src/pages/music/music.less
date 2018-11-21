@@ -116,18 +116,17 @@
 }
 .tap-cover{
     width: 100%;
-    height: 100%;
+    height: 0rpx;
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 10;
+    z-index: 1001;
+    background: rgba(0,0,0,0);
+    transition: all 200ms;
 }
 .music-list-cover{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+    z-index: 1000;
+    height: 0rpx;
 }
 .music-list{
     width: 100%;
@@ -135,12 +134,13 @@
     background: #fff;
     border-top: 1px #e0e0e0 solid;
     position: absolute;
-    bottom: 0;
+    bottom: -400rpx;
     left: 0;
-    z-index: 100;
+    z-index: 1002;
+    transition: all 200ms;
     .title{
         font-size: 32rpx;
-        line-height: 60rpx;
+        line-height: 100rpx;
         color: #323232;
         padding-left: 30rpx;
         font-weight: bold;
@@ -166,3 +166,16 @@
     }
     
 }
+.hide{
+    animation: fadeIn 200ms;
+}
+.show{
+    animation: fadeOut 200ms;
+}
+@keyfarmes fadeIn{
+    from{background: rgba(0,0,0,.3);}
+    to{background: rgba(0,0,0,0);}
+}
+@keyfarmes fadeOut{
+    from{background: rgba(0,0,0,0);}
+    to{background: rgba(0,0,0,.3);}

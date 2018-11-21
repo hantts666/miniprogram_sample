@@ -44,15 +44,15 @@
     
   </view>
   
-  <view class="music-list-cover" hover-stop-propagation  wx:if="{{showMenu}}">
-      <view class="tap-cover" ontap="ontap_closeMenu"></view>
-      <view class="music-list" wx:if="{{showMenu}}">
-          <view class="title">歌曲列表</view>
-          <view class="ul">
-              <view class="li {{index===indexInMusicList?'index':''}}" wx:for="{{MusicList}}" wx:for-item="item" wx:for-index="index" wx:key="{{item.id}}" ontap="onTap_chooseList" data-id="{{index}}"> 
-                  {{index}}:{{item.name}}-{{item.author}} 
-              </view>
+  
+  <view class="tap-cover " ontap="ontap_closeMenu" wx:if="{{showMenu}}"></view>
+  <view class="music-list" style="bottom:{{showMenu?'0rpx':'-500rpx'}}">
+      <view class="title">歌曲列表</view>
+      <view class="ul">
+          <view class="li {{index===indexInMusicList?'index':''}}" wx:for="{{MusicList}}" wx:for-item="item" wx:for-index="index" wx:key="{{item.id}}" ontap="onTap_chooseList" data-id="{{index}}"> 
+              {{index}}:{{item.name}}-{{item.author}} 
           </view>
       </view>
   </view>
+  
 </view>

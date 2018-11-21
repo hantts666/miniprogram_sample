@@ -8,10 +8,10 @@
     <view class="wrapper">
         <view class="one-example">
             <view class="title">动画方式1：@keyfarmes</view>
-            <view class="ul">
-                <view class="li">*可以使用CSS3中的@keyframes的方式使用动画，例如我使用网上流行的animate.css做了一个演示demo</view>
-                <view class="li">*animate.css就是一个基于@keyframes封装的动画集合，很方便实用，调用方式也多种多样！</view>
-                <view class="li">*例如：以下例子所添加的类是：{{currClass}}</view>
+            <view class="text-list">
+                <view class="text-item">*可以使用CSS3中的@keyframes的方式使用动画，例如我使用网上流行的animate.css做了一个演示demo</view>
+                <view class="text-item">*animate.css就是一个基于@keyframes封装的动画集合，很方便实用，调用方式也多种多样！</view>
+                <view class="text-item">*例如：以下例子所添加的类是：{{currClass}}</view>
             </view>
             <view class="section">
                 <picker bindchange="onPickerChange" value="{{index}}" range="{{animations}}">
@@ -26,11 +26,11 @@
         </view>
         <view class="one-example">
             <view class="title">动画方式2：wx.createAnimation</view>
-            <view class="ul">
-            	<view class="li">*微信小程序开发环境中，wx对象上能实例化一个专门控制动画的对象，在标签中，以animation标签接受这个实例通过export方法返回的值</view>
-            	<view class="li">*您可以尝试多次点击下面的蓝色框框内的内容</view>
-            	<view class="li">*以下的例子全部是使用css3做的，可以看到，用这个对象也可以轻易的实现css3动画在js环境下的异步操作。</view>
-            	<view class="li">*当然要说明的是，wx.createAnimation要比transition属性要方便许多，因为如果使用transition，需要js直接控制属性，就需要很多拼接字符串的操作，很费力，而微信的封装，让我们更容易做到这一点。</view>
+            <view class="text-list">
+            	<view class="text-item">*微信小程序开发环境中，wx对象上能实例化一个专门控制动画的对象，在标签中，以animation标签接受这个实例通过export方法返回的值</view>
+            	<view class="text-item">*您可以尝试多次点击下面的蓝色框框内的内容</view>
+            	<view class="text-item">*以下的例子全部是使用css3做的，可以看到，用这个对象也可以轻易的实现css3动画在js环境下的异步操作。</view>
+            	<view class="text-item">*当然要说明的是，wx.createAnimation要比transition属性要方便许多，因为如果使用transition，需要js直接控制属性，就需要很多拼接字符串的操作，很费力，而微信的封装，让我们更容易做到这一点。</view>
             </view>
         </view>
     </view>

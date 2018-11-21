@@ -1,9 +1,10 @@
 {
   "pages":[
     "pages/index/index",
-		"pages/animate/animate",
+    "pages/animate/animate",
     "pages/map/map",
-    "pages/music/music"
+    "pages/music/music",
+    "pages/record/record"
   ],
   "window":{
     "backgroundTextStyle":"light",

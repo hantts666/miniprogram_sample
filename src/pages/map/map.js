@@ -25,18 +25,18 @@ Page({
             dottedLine: true
         }],
         polygons:[{
-            "points":[
+            'points':[
                 {
-                    "longitude":116.40728589274076,
-                    "latitude":39.9551223218052
+                    'longitude':116.40728589274076,
+                    'latitude':39.9551223218052
                 },
                 {
-                    "longitude":116.4516491246582,
-                    "latitude":39.95582547664669
+                    'longitude':116.4516491246582,
+                    'latitude':39.95582547664669
                 },
                 {
-                    "longitude":116.41420970813203,
-                    "latitude":39.96042917343807
+                    'longitude':116.41420970813203,
+                    'latitude':39.96042917343807
                 }
             ]
         }],
@@ -52,13 +52,13 @@ Page({
         this.mapContext2 = wx.createMapContext('map2', this);
         this.mapContext3 = wx.createMapContext('map3', this);
         wx.getLocation({
-        		type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-        		success(res){ 
-        				_this.locationRes = res;
+            type: 'gcj02', // 返回可以用于wx.openLocation的经纬度
+            success(res){ 
+                _this.locationRes = res;
                 _this.mapContext1.moveToLocation();
                 _this.mapContext2.moveToLocation();
                 _this.mapContext3.moveToLocation();
-        		}
+            }
         });
     },
     onReady(){
@@ -66,12 +66,11 @@ Page({
     },
     getSomeRandomMarkers(){
         let _id = Math.floor(Math.random()*10000000);
-        let _this = this;
         let _label = {
             content: '我是随机地点',
             color: '#323232',
             borderRadius: '20'
-        }
+        };
         let _callout = {
             content:'导航到此处',
             color: '#323232',
@@ -79,7 +78,7 @@ Page({
             borderRadius: 10,
             borderColor: '#323232',
             padding: 10,
-        }
+        };
         this.data.markers.push({
             id: JSON.stringify(_id),
             latitude: this.locationRes.latitude + ((Math.random()*10)-5)/100,
@@ -109,19 +108,19 @@ Page({
         });
     },
     onTap_Map2_getRandomMark(){
-        this.getSomeRandomMarkers()
+        this.getSomeRandomMarkers();
     },
     onTap_Map2_calloutTap(e){
         let _poi = null;
         this.data.markers.forEach(i=>{
             if(i.id === e.markerId){
-              _poi = i
+                _poi = i;
             }
         });
         wx.openLocation({
             latitude: _poi.latitude,
             longitude: _poi.longitude,
-            address: "随机地点：" + _poi.title
+            address: '随机地点：' + _poi.title
         });
     },
     onTap_Map3_getRandomPolyline(){
@@ -135,7 +134,7 @@ Page({
         console.log(this.data.polyline);
     },
     onTap_Map3_getRandomPolygons(){
-        let _p = []
+        let _p = [];
         for(let i=0;i<4;i++){
             _p.push({
                 longitude: this.locationRes.longitude + ((Math.random()*10)-5)/100,

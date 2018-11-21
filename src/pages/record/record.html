@@ -1,0 +1,24 @@
+
+<view class="record-wrapper">
+    <view class="records">
+        <view class="record" wx:for="{{todoList}}" wx:for-index="idx" wx:for-item="item" wx:key="{{idx}}"  ontap="onTap_playItem" data-index="{{idx}}">
+            <view>{{idx}}:{{item.time}}</view>
+            <view class="playbtn {{item.play === 'true'?'stop':'play'}}"></view>
+        </view>
+    </view>
+    <view class="btn-box">
+        <view class="btn" ontap="onTap_record">
+            <view class="icon">
+                <image src="./s{{recordStatus}}.png" class="img"></image>
+            </view>
+            <view class="text">{{recordStatus==='0'?'开始录音':''}}{{recordStatus==='1'?'继续录音':''}}{{recordStatus==='2'?'暂停录音':''}}</view>
+        </view>
+
+        <view class="btn" ontap="onTap_stop">
+            <view class="icon">
+                <image src="./stop.png" class="img"></image>
+            </view>
+            <view class="text">停止录音</view>
+        </view>
+    </view>
+</view>

@@ -13,7 +13,8 @@ Page({
             path: '../animate/animate'
         }, {
             name: '自定义音乐播放器',
-            path: '../music/music'
+            // path: '../music/music'
+            path: '../record/record'
         }, {
             name: '地图',
             path: '../map/map'
